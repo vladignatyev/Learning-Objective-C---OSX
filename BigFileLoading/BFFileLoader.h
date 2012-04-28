@@ -15,12 +15,9 @@
   
 }
 
-#define EXISTED_FILEPATH @"/tmp/testfile.txt"
-
--(id) init;
-
 -(void) openFileBy:(NSString*)path;
 -(void) close;
 
 @end
 
+#define EXISTED_FILEPATH @"/tmp/testfile.txt"

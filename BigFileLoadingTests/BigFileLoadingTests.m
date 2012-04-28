@@ -14,15 +14,11 @@
 {
     [super setUp];
     
-    // Set-up code here.
-    
     self->fileLoader = [[BFFileLoader alloc] init];
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
     [super tearDown];
 }
 
