@@ -16,7 +16,9 @@
 }
 
 -(void) openFileBy:(NSString*)path;
+-(NSData*) readChunk:(NSUInteger)size;
 -(void) close;
+-(id) init;
 
 @end
 

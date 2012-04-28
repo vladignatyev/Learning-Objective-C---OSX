@@ -8,7 +8,7 @@
 
 #import "BFFileLoader.h"
 
-@implementation BFFileLoader
+@implementation BFFileLoader 
 
 -(void) openFileBy:(NSString*)path
 {
@@ -28,6 +28,12 @@
 -(void) close
 {
     [self->fileHandle closeFile];
+}
+
+-(id) init
+{
+    self = [super init];
+    return self;
 }
 
 @end
