@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8016757B154C727B00427291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8016757A154C727B00427291 /* UIKit.framework */; };
+		8016757D154C727B00427291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8016757C154C727B00427291 /* Foundation.framework */; };
+		8016757F154C727B00427291 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8016757E154C727B00427291 /* CoreGraphics.framework */; };
+		80167585154C727B00427291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80167583154C727B00427291 /* InfoPlist.strings */; };
+		80167587154C727B00427291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80167586154C727B00427291 /* main.m */; };
+		8016758B154C727B00427291 /* BFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016758A154C727B00427291 /* BFAppDelegate.m */; };
+		8016758E154C727B00427291 /* BFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016758D154C727B00427291 /* BFViewController.m */; };
+		80167591154C727B00427291 /* BFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8016758F154C727B00427291 /* BFViewController.xib */; };
+		80167599154C727B00427291 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80167598154C727B00427291 /* SenTestingKit.framework */; };
+		8016759A154C727B00427291 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8016757A154C727B00427291 /* UIKit.framework */; };
+		8016759B154C727B00427291 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8016757C154C727B00427291 /* Foundation.framework */; };
+		801675A3154C727B00427291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 801675A1154C727B00427291 /* InfoPlist.strings */; };
+		801675A6154C727B00427291 /* BigFileLoadingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 801675A5154C727B00427291 /* BigFileLoadingTests.m */; };
+		801675B1154C72CC00427291 /* BFFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 801675B0154C72CC00427291 /* BFFileLoader.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8016759C154C727B00427291 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8016756D154C727B00427291 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80167575154C727B00427291;
+			remoteInfo = BigFileLoading;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80167576154C727B00427291 /* BigFileLoading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigFileLoading.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8016757A154C727B00427291 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8016757C154C727B00427291 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8016757E154C727B00427291 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		80167582154C727B00427291 /* BigFileLoading-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BigFileLoading-Info.plist"; sourceTree = "<group>"; };
+		80167584154C727B00427291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		80167586154C727B00427291 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		80167588154C727B00427291 /* BigFileLoading-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BigFileLoading-Prefix.pch"; sourceTree = "<group>"; };
+		80167589154C727B00427291 /* BFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFAppDelegate.h; sourceTree = "<group>"; };
+		8016758A154C727B00427291 /* BFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFAppDelegate.m; sourceTree = "<group>"; };
+		8016758C154C727B00427291 /* BFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
+		8016758D154C727B00427291 /* BFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFViewController.m; sourceTree = "<group>"; };
+		80167590154C727B00427291 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BFViewController.xib; sourceTree = "<group>"; };
+		80167597154C727B00427291 /* BigFileLoadingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigFileLoadingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80167598154C727B00427291 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		801675A0154C727B00427291 /* BigFileLoadingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BigFileLoadingTests-Info.plist"; sourceTree = "<group>"; };
+		801675A2154C727B00427291 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		801675A4154C727B00427291 /* BigFileLoadingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigFileLoadingTests.h; sourceTree = "<group>"; };
+		801675A5154C727B00427291 /* BigFileLoadingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigFileLoadingTests.m; sourceTree = "<group>"; };
+		801675AF154C72CC00427291 /* BFFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFileLoader.h; sourceTree = "<group>"; };
+		801675B0154C72CC00427291 /* BFFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFileLoader.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80167573154C727B00427291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8016757B154C727B00427291 /* UIKit.framework in Frameworks */,
+				8016757D154C727B00427291 /* Foundation.framework in Frameworks */,
+				8016757F154C727B00427291 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80167593154C727B00427291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80167599154C727B00427291 /* SenTestingKit.framework in Frameworks */,
+				8016759A154C727B00427291 /* UIKit.framework in Frameworks */,
+				8016759B154C727B00427291 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8016756B154C727B00427291 = {
+			isa = PBXGroup;
+			children = (
+				80167580154C727B00427291 /* BigFileLoading */,
+				8016759E154C727B00427291 /* BigFileLoadingTests */,
+				80167579154C727B00427291 /* Frameworks */,
+				80167577154C727B00427291 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80167577154C727B00427291 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80167576154C727B00427291 /* BigFileLoading.app */,
+				80167597154C727B00427291 /* BigFileLoadingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80167579154C727B00427291 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8016757A154C727B00427291 /* UIKit.framework */,
+				8016757C154C727B00427291 /* Foundation.framework */,
+				8016757E154C727B00427291 /* CoreGraphics.framework */,
+				80167598154C727B00427291 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80167580154C727B00427291 /* BigFileLoading */ = {
+			isa = PBXGroup;
+			children = (
+				80167589154C727B00427291 /* BFAppDelegate.h */,
+				8016758A154C727B00427291 /* BFAppDelegate.m */,
+				8016758C154C727B00427291 /* BFViewController.h */,
+				8016758D154C727B00427291 /* BFViewController.m */,
+				8016758F154C727B00427291 /* BFViewController.xib */,
+				80167581154C727B00427291 /* Supporting Files */,
+				801675AF154C72CC00427291 /* BFFileLoader.h */,
+				801675B0154C72CC00427291 /* BFFileLoader.m */,
+			);
+			path = BigFileLoading;
+			sourceTree = "<group>";
+		};
+		80167581154C727B00427291 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80167582154C727B00427291 /* BigFileLoading-Info.plist */,
+				80167583154C727B00427291 /* InfoPlist.strings */,
+				80167586154C727B00427291 /* main.m */,
+				80167588154C727B00427291 /* BigFileLoading-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8016759E154C727B00427291 /* BigFileLoadingTests */ = {
+			isa = PBXGroup;
+			children = (
+				801675A4154C727B00427291 /* BigFileLoadingTests.h */,
+				801675A5154C727B00427291 /* BigFileLoadingTests.m */,
+				8016759F154C727B00427291 /* Supporting Files */,
+			);
+			path = BigFileLoadingTests;
+			sourceTree = "<group>";
+		};
+		8016759F154C727B00427291 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				801675A0154C727B00427291 /* BigFileLoadingTests-Info.plist */,
+				801675A1154C727B00427291 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80167575154C727B00427291 /* BigFileLoading */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801675A9154C727B00427291 /* Build configuration list for PBXNativeTarget "BigFileLoading" */;
+			buildPhases = (
+				80167572154C727B00427291 /* Sources */,
+				80167573154C727B00427291 /* Frameworks */,
+				80167574154C727B00427291 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BigFileLoading;
+			productName = BigFileLoading;
+			productReference = 80167576154C727B00427291 /* BigFileLoading.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80167596154C727B00427291 /* BigFileLoadingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801675AC154C727B00427291 /* Build configuration list for PBXNativeTarget "BigFileLoadingTests" */;
+			buildPhases = (
+				80167592154C727B00427291 /* Sources */,
+				80167593154C727B00427291 /* Frameworks */,
+				80167594154C727B00427291 /* Resources */,
+				80167595154C727B00427291 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8016759D154C727B00427291 /* PBXTargetDependency */,
+			);
+			name = BigFileLoadingTests;
+			productName = BigFileLoadingTests;
+			productReference = 80167597154C727B00427291 /* BigFileLoadingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8016756D154C727B00427291 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = " ya.na.pochte@gmail.com";
+			};
+			buildConfigurationList = 80167570154C727B00427291 /* Build configuration list for PBXProject "BigFileLoading" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8016756B154C727B00427291;
+			productRefGroup = 80167577154C727B00427291 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80167575154C727B00427291 /* BigFileLoading */,
+				80167596154C727B00427291 /* BigFileLoadingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80167574154C727B00427291 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80167585154C727B00427291 /* InfoPlist.strings in Resources */,
+				80167591154C727B00427291 /* BFViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80167594154C727B00427291 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801675A3154C727B00427291 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80167595154C727B00427291 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80167572154C727B00427291 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80167587154C727B00427291 /* main.m in Sources */,
+				8016758B154C727B00427291 /* BFAppDelegate.m in Sources */,
+				8016758E154C727B00427291 /* BFViewController.m in Sources */,
+				801675B1154C72CC00427291 /* BFFileLoader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80167592154C727B00427291 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801675A6154C727B00427291 /* BigFileLoadingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8016759D154C727B00427291 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80167575154C727B00427291 /* BigFileLoading */;
+			targetProxy = 8016759C154C727B00427291 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80167583154C727B00427291 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80167584154C727B00427291 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8016758F154C727B00427291 /* BFViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80167590154C727B00427291 /* en */,
+			);
+			name = BFViewController.xib;
+			sourceTree = "<group>";
+		};
+		801675A1154C727B00427291 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				801675A2154C727B00427291 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		801675A7154C727B00427291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		801675A8154C727B00427291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		801675AA154C727B00427291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BigFileLoading/BigFileLoading-Prefix.pch";
+				INFOPLIST_FILE = "BigFileLoading/BigFileLoading-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		801675AB154C727B00427291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BigFileLoading/BigFileLoading-Prefix.pch";
+				INFOPLIST_FILE = "BigFileLoading/BigFileLoading-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		801675AD154C727B00427291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BigFileLoading.app/BigFileLoading";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BigFileLoading/BigFileLoading-Prefix.pch";
+				INFOPLIST_FILE = "BigFileLoadingTests/BigFileLoadingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		801675AE154C727B00427291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BigFileLoading.app/BigFileLoading";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BigFileLoading/BigFileLoading-Prefix.pch";
+				INFOPLIST_FILE = "BigFileLoadingTests/BigFileLoadingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80167570154C727B00427291 /* Build configuration list for PBXProject "BigFileLoading" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801675A7154C727B00427291 /* Debug */,
+				801675A8154C727B00427291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		801675A9154C727B00427291 /* Build configuration list for PBXNativeTarget "BigFileLoading" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801675AA154C727B00427291 /* Debug */,
+				801675AB154C727B00427291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		801675AC154C727B00427291 /* Build configuration list for PBXNativeTarget "BigFileLoadingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801675AD154C727B00427291 /* Debug */,
+				801675AE154C727B00427291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8016756D154C727B00427291 /* Project object */;
+}
