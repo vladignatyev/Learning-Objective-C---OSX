@@ -48,6 +48,19 @@
         [NSException raise:@"Unable to open file" format:@"File %s is unaccessible", filepath];
     }
 }
+- (BOOL)readChunk
+{
+    @autoreleasepool {
+        NSData* dataRead = [fileHandle readDataOfLength:_chunkSize];
+        if ([dataRead length] == 0 || !dataRead) {
+            return FALSE;
+        }
+        _filePosition = [fileHandle offsetInFile];
+        NSLog(@"Bytes read %d", [dataRead length]);    
+        [delegate dataFetched:dataRead byLoader:self];
+    }
+    return TRUE;
+}
 
 - (void)readFile
 {
@@ -59,16 +72,7 @@
         [NSException raise:@"Delegate must be set!" format:@""];
     }
     
-    while (true) {
-        @autoreleasepool {
-            NSData* dataRead = [fileHandle readDataOfLength:_chunkSize];
-            if ([dataRead length] == 0 || !dataRead) {
-                break;
-            }
-            _filePosition = [fileHandle offsetInFile];
-            NSLog(@"Bytes read %d", [dataRead length]);    
-            [delegate dataFetched:dataRead byLoader:self];
-        }
+    while ([self readChunk]) {
     }
     
     NSLog(@"File successfully read");

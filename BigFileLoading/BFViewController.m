@@ -12,16 +12,34 @@
 #import "BFLoadingDelegate.h"
 
 @interface FileLoadingDelegate : NSObject <BFLoadingDelegate> {
+    BFViewController* viewController;
 }
 
 - (void)dataFetched:(NSData*)data byLoader:(BFFileLoader*)loader;
+- (id)initWithViewController:(BFViewController*)aViewController;
 @end
 
 @implementation FileLoadingDelegate
 
 - (void)dataFetched:(NSData*)data byLoader:(BFFileLoader*)loader
 {
-    NSLog(@"Some data loadede: %i", [data length]);
+    float progressValue = (float) ((float) loader.filePosition) / ((float) loader.fileSize);
+    [viewController.progressBar setProgress:progressValue];
+    if (progressValue == 1) {
+        [viewController.progressAndFileInfo setText:@"Файл загружен"];        
+    } else {
+        [viewController.progressAndFileInfo setText:@"Файл загружается"];        
+    }
+
+}
+
+- (id)initWithViewController:(BFViewController*)aViewController
+{
+    self = [super init];
+    
+    viewController = aViewController;
+    
+    return self;
 }
 
 @end
@@ -107,10 +125,13 @@
 {
     NSLog(@"Touched down!");
     
+    [progressAndFileInfo setText:@"Файл еще не загружен"];        
+    [progressBar setProgress:0.0f];
+    
     BFFileLoader* loader = [[BFFileLoader alloc] init];
-    loader.delegate = [[FileLoadingDelegate alloc] init];
-    loader.chunkSize = 2;
-    [loader openFileWith:@"/tmp/testfile.txt"];
+    loader.delegate = [[FileLoadingDelegate alloc] initWithViewController:self];
+    loader.chunkSize = 1024*300;
+    [loader openFileWith:@"/Users/ignatev/Downloads/ideaIU-11.1.1.dmg"];
     [loader readFile];
     [loader close];
 }
