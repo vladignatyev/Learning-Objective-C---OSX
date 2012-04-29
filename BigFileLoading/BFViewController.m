@@ -8,7 +8,39 @@
 
 #import "BFViewController.h"
 
+#import "BFFileLoader.h"
+#import "BFLoadingDelegate.h"
+
+@interface FileLoadingDelegate : NSObject <BFLoadingDelegate> {
+}
+
+- (void)dataFetched:(NSData*)data byLoader:(BFFileLoader*)loader;
+@end
+
+@implementation FileLoadingDelegate
+
+- (void)dataFetched:(NSData*)data byLoader:(BFFileLoader*)loader
+{
+    NSLog(@"Some data loadede: %i", [data length]);
+}
+
+@end
+
+
 @implementation BFViewController
+
+@synthesize testButton;
+@synthesize progressBar;
+@synthesize progressAndFileInfo;
+
+
+
+- (void)dealloc
+{
+//    [testButton release];
+//    [progressBar release];
+//    [progressAndFileInfo release];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,6 +54,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self setInitialState];
+    [self initHandlers];
 }
 
 - (void)viewDidUnload
@@ -55,6 +89,30 @@
 {
     // Return YES for supported orientations
     return YES;
+}
+
+#pragma mark - Event handlers and Controller lifecycle
+
+- (void)initHandlers
+{
+    [testButton addTarget:self action:@selector(testButtonTouch:) forControlEvents:UIControlEventTouchDown];
+}
+
+- (void)setInitialState
+{
+    [progressBar setProgress:0.0f];
+}
+
+- (IBAction)testButtonTouch:(id)sender
+{
+    NSLog(@"Touched down!");
+    
+    BFFileLoader* loader = [[BFFileLoader alloc] init];
+    loader.delegate = [[FileLoadingDelegate alloc] init];
+    loader.chunkSize = 2;
+    [loader openFileWith:@"/tmp/testfile.txt"];
+    [loader readFile];
+    [loader close];
 }
 
 @end

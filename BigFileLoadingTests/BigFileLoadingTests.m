@@ -10,11 +10,16 @@
 
 @implementation BigFileLoadingTests
 
+
+#define EXISTING_FILEPATH @"/tmp/testfile.txt"
+#define NONEXISTING_FILEPATH @"/tmp/realynonexistingfileforBFFileLoader"
+#define MINIMAL_CHUNK_SIZE 5
+
 - (void)setUp
 {
     [super setUp];
     
-    self->fileLoader = [[BFFileLoader alloc] init];
+    fileLoader = [[BFFileLoader alloc] init];
 }
 
 - (void)tearDown
@@ -24,15 +29,18 @@
 
 - (void)testInitialConditions
 {
-    STAssertNotNil(self->fileLoader, @"BFFileLoader object must be not nil");
-    STAssertNoThrow([self->fileLoader openFileBy:EXISTED_FILEPATH], @"Open file must not raise error");  
+    STAssertNotNil(fileLoader, @"BFFileLoader object must be not nil");
+    STAssertThrows([fileLoader openFileWith:NONEXISTING_FILEPATH], @"Open file must throw exception on non existing file");
+    STAssertNoThrow([fileLoader openFileWith:EXISTING_FILEPATH], @"Open file must not raise error");  
 }
 
-- (void)testDataNotNil
+- (void)testDataNotNilOnRead
 {
-    [self->fileLoader openFileBy:EXISTED_FILEPATH];
-
-//    STAssertTrue([self->fileLoader->fileData length] > 0, @"Length of data must not be null");
+    [fileLoader openFileWith:EXISTING_FILEPATH];
+    
+//    STAssertNotNil(data, @"data must not be null if we read chunk from existing file");
+    
 }
+
 
 @end

@@ -55,6 +55,7 @@
 		801675A5154C727B00427291 /* BigFileLoadingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigFileLoadingTests.m; sourceTree = "<group>"; };
 		801675AF154C72CC00427291 /* BFFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFileLoader.h; sourceTree = "<group>"; };
 		801675B0154C72CC00427291 /* BFFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFileLoader.m; sourceTree = "<group>"; };
+		801675B2154D984F00427291 /* BFLoadingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLoadingDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +123,7 @@
 				80167581154C727B00427291 /* Supporting Files */,
 				801675AF154C72CC00427291 /* BFFileLoader.h */,
 				801675B0154C72CC00427291 /* BFFileLoader.m */,
+				801675B2154D984F00427291 /* BFLoadingDelegate.h */,
 			);
 			path = BigFileLoading;
 			sourceTree = "<group>";

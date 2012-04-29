@@ -14,5 +14,4 @@
   @private
     BFFileLoader* fileLoader;
 }
-
 @end

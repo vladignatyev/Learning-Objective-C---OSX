@@ -7,34 +7,84 @@
 //
 
 #import "BFFileLoader.h"
+#import "BFLoadingDelegate.h"
 
 @implementation BFFileLoader 
 
--(void) openFileBy:(NSString*)path
+@synthesize delegate;
+@synthesize chunkSize=_chunkSize;
+
+@synthesize fileSize=_fileSize;
+@synthesize filePosition=_filePosition;
+
+- (void) setChunkSize:(NSUInteger)chunkSize 
 {
-    self->fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    if (self->fileHandle == nil) {
-        [NSException raise:@"Unable to open file" format:@"file %s unaccessible", path];
+    if (chunkSize == 0) {
+        [NSException raise:@"Chunk size must not be 0!" format:@""];
+    }
+    _chunkSize = chunkSize;
+}
+
+-(NSUInteger) getFileSizeFor:(NSString*)filepath
+{
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:filepath error:NULL];
+    NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
+    if (fileSizeNumber) {
+        NSUInteger size = [fileSizeNumber unsignedLongLongValue];
+        NSLog(@"File size: %i\n", size);
+        return size;
+    } else {
+        return 0;
     }
 }
 
--(NSData*) readChunk:(NSUInteger) size 
+- (void)openFileWith:(NSString*)filepath
 {
-    NSData* dataRead = [self->fileHandle readDataOfLength:size];
-    NSLog(@"bytes read %d", [dataRead length]);
-    return dataRead;
+    _fileSize = [self getFileSizeFor:filepath];
+    
+    fileHandle = [NSFileHandle fileHandleForReadingAtPath:filepath];
+    if (!_fileSize) {
+        [NSException raise:@"Unable to open file" format:@"File %s is unaccessible", filepath];
+    }
 }
 
--(void) close
+- (void)readFile
 {
-    [self->fileHandle closeFile];
+    if (!fileHandle) {
+        [NSException raise:@"File must be opened." format:@""];
+    }
+    
+    if (!delegate) {
+        [NSException raise:@"Delegate must be set!" format:@""];
+    }
+    
+    while (true) {
+        @autoreleasepool {
+            NSData* dataRead = [fileHandle readDataOfLength:_chunkSize];
+            if ([dataRead length] == 0 || !dataRead) {
+                break;
+            }
+            _filePosition = [fileHandle offsetInFile];
+            NSLog(@"Bytes read %d", [dataRead length]);    
+            [delegate dataFetched:dataRead byLoader:self];
+        }
+    }
+    
+    NSLog(@"File successfully read");
 }
 
--(id) init
+- (void)close
+{
+    [fileHandle closeFile];
+}
+
+- (id)init
 {
     self = [super init];
     return self;
 }
+
 
 @end
 

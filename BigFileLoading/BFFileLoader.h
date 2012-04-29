@@ -7,19 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BFLoadingDelegate.h"
 
 @interface BFFileLoader : NSObject
 {
   @private 
     NSFileHandle* fileHandle;
-  
+    NSUInteger currentChunkNumber;
+    NSUInteger _chunkSize;
+    NSUInteger _fileSize;
+    NSUInteger _filePosition;
 }
 
--(void) openFileBy:(NSString*)path;
--(NSData*) readChunk:(NSUInteger)size;
--(void) close;
--(id) init;
+@property (nonatomic,retain,readwrite) id < BFLoadingDelegate > delegate;
+
+@property (nonatomic,setter = setChunkSize:, readwrite) NSUInteger chunkSize;
+- (void) setChunkSize:(NSUInteger)chunkSize;
+
+@property (nonatomic,assign,readonly) NSUInteger filePosition;
+@property (nonatomic,assign,readonly) NSUInteger fileSize;
+
+
+- (void)openFileWith:(NSString*)path;
+- (void)readFile;
+- (void)close;
+- (id)init;
 
 @end
-
-#define EXISTED_FILEPATH @"/tmp/testfile.txt"
