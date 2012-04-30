@@ -121,9 +121,7 @@
 				8016758D154C727B00427291 /* BFViewController.m */,
 				8016758F154C727B00427291 /* BFViewController.xib */,
 				80167581154C727B00427291 /* Supporting Files */,
-				801675AF154C72CC00427291 /* BFFileLoader.h */,
-				801675B0154C72CC00427291 /* BFFileLoader.m */,
-				801675B2154D984F00427291 /* BFLoadingDelegate.h */,
+				801675BF154E9BCB00427291 /* FileLoader */,
 			);
 			path = BigFileLoading;
 			sourceTree = "<group>";
@@ -156,6 +154,16 @@
 				801675A1154C727B00427291 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		801675BF154E9BCB00427291 /* FileLoader */ = {
+			isa = PBXGroup;
+			children = (
+				801675AF154C72CC00427291 /* BFFileLoader.h */,
+				801675B0154C72CC00427291 /* BFFileLoader.m */,
+				801675B2154D984F00427291 /* BFLoadingDelegate.h */,
+			);
+			name = FileLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +448,7 @@
 				801675AB154C727B00427291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		801675AC154C727B00427291 /* Build configuration list for PBXNativeTarget "BigFileLoadingTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +457,7 @@
 				801675AE154C727B00427291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
