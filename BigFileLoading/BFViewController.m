@@ -20,6 +20,16 @@
 
 @implementation FileLoadingDelegate
 
+- (void)beforeLoading
+{
+    
+}
+
+- (void)afterLoading
+{
+    
+}
+
 - (void)dataFetched:(NSData*)data inOperation:(BFOperation *)operation
 {
     [self performSelectorOnMainThread:@selector(updateView:) withObject:operation waitUntilDone:TRUE];
@@ -126,16 +136,14 @@
 
 - (IBAction)testButtonTouch:(id)sender
 {
-    NSLog(@"Touched down!");
-    
     [progressAndFileInfo setText:@"Файл еще не загружен"];        
     [progressBar setProgress:0.0f];
     
     BFFileLoader* loader = [[BFFileLoader alloc] init];
     loader.delegate = [[FileLoadingDelegate alloc] initWithViewController:self];
-    loader.chunkSize = 1024*300;
-    [loader openFile:@"/Users/ignatev/Downloads/ideaIU-11.1.1.dmg"];
-    [loader readFile:YES];
+    loader.chunkSize = 1024*300;    //300kB chunks
+    [loader openFile:@"/Users/ignatev/Downloads/ideaIU-11.1.1.dmg"]; //any large file
+    [loader readFile: YES];
     [loader close];
 }
 

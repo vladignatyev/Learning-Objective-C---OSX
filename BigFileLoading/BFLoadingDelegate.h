@@ -12,6 +12,8 @@
 
 @protocol BFLoadingDelegate <NSObject>
 
+- (void)beforeLoading;
 - (void)dataFetched:(NSData*)data inOperation:(BFOperation*)operation;
+- (void)afterLoading;
 
 @end

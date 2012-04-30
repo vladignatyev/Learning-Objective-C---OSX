@@ -32,7 +32,6 @@
 - (void)openFile:(NSString*)path;
 - (void)readFile:(BOOL)inAsyncMode;
 - (void)close;
-- (id)init;
 
 @end
 
