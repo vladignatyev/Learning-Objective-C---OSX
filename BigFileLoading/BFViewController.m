@@ -15,22 +15,25 @@
     BFViewController* viewController;
 }
 
-- (void)dataFetched:(NSData*)data byLoader:(BFFileLoader*)loader;
 - (id)initWithViewController:(BFViewController*)aViewController;
 @end
 
 @implementation FileLoadingDelegate
 
-- (void)dataFetched:(NSData*)data byLoader:(BFFileLoader*)loader
+- (void)dataFetched:(NSData*)data inOperation:(BFOperation *)operation
 {
-    float progressValue = (float) ((float) loader.filePosition) / ((float) loader.fileSize);
+    [self performSelectorOnMainThread:@selector(updateView:) withObject:operation waitUntilDone:TRUE];
+}
+
+- (void)updateView:(BFOperation*)operation
+{
+    float progressValue = (float) [operation filePosition] / (float) [operation fileSize];
     [viewController.progressBar setProgress:progressValue];
     if (progressValue == 1) {
         [viewController.progressAndFileInfo setText:@"Файл загружен"];        
     } else {
         [viewController.progressAndFileInfo setText:@"Файл загружается"];        
     }
-
 }
 
 - (id)initWithViewController:(BFViewController*)aViewController
@@ -131,8 +134,8 @@
     BFFileLoader* loader = [[BFFileLoader alloc] init];
     loader.delegate = [[FileLoadingDelegate alloc] initWithViewController:self];
     loader.chunkSize = 1024*300;
-    [loader openFileWith:@"/Users/ignatev/Downloads/ideaIU-11.1.1.dmg"];
-    [loader readFile];
+    [loader openFile:@"/Users/ignatev/Downloads/ideaIU-11.1.1.dmg"];
+    [loader readFile:YES];
     [loader close];
 }
 

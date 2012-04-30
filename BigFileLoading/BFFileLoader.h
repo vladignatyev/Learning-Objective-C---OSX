@@ -17,6 +17,7 @@
     NSUInteger _chunkSize;
     NSUInteger _fileSize;
     NSUInteger _filePosition;
+    NSString* _filepath;
 }
 
 @property (nonatomic,retain,readwrite) id < BFLoadingDelegate > delegate;
@@ -28,9 +29,25 @@
 @property (nonatomic,assign,readonly) NSUInteger fileSize;
 
 
-- (void)openFileWith:(NSString*)path;
-- (void)readFile;
+- (void)openFile:(NSString*)path;
+- (void)readFile:(BOOL)inAsyncMode;
 - (void)close;
 - (id)init;
 
+@end
+
+
+@interface BFOperation : NSObject {
+    NSFileHandle* fileHandle;
+    id <BFLoadingDelegate> delegate;
+    NSUInteger _fileSize;
+    NSUInteger _filePosition;
+    NSString* _filePath;
+}
+
+@property(nonatomic,assign,readonly)NSUInteger filePosition;
+@property(nonatomic,assign,readonly)NSUInteger fileSize;
+@property(nonatomic,retain,readonly)NSString* filePath;
+
+- (void)run;
 @end

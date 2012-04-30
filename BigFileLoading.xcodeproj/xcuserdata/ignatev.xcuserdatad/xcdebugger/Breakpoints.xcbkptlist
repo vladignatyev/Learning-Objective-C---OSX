@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357413613.74642"
+         timestampString = "357472208.518592"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "12"
-         endingLineNumber = "12"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "@implementation BFFileLoader"
          landmarkType = "3">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357409116.704735"
+         timestampString = "357472208.518592"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "15"
-         endingLineNumber = "15"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
          landmarkName = "chunkSize"
          landmarkType = "19">
       </FileBreakpoint>
@@ -51,12 +51,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357413613.74642"
+         timestampString = "357472208.518592"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
-         landmarkName = "-openFileWith:"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "-openFile:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.h"
-         timestampString = "357413613.74642"
+         timestampString = "357467912.249578"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
+         startingLineNumber = "25"
+         endingLineNumber = "25"
          landmarkName = "chunkSize"
          landmarkType = "19">
       </FileBreakpoint>
@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.h"
-         timestampString = "357413613.74642"
+         timestampString = "357467912.249578"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "27"
-         endingLineNumber = "27"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
          landmarkName = "filePosition"
          landmarkType = "19">
       </FileBreakpoint>
@@ -93,69 +93,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357413613.74642"
+         timestampString = "357472208.518592"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
-         landmarkName = "-openFileWith:"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "-openFile:"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "BigFileLoading/BFLoadingDelegate.h"
-         timestampString = "357412760.374069"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "14"
-         endingLineNumber = "14"
-         landmarkName = "-dataFetched:byLoader:"
-         landmarkType = "4">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357422763.366312"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357422763.366312"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
-         landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357422763.366312"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
-         landmarkName = "@implementation BFFileLoader"
-         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
@@ -163,11 +107,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357422763.366312"
+         timestampString = "357472245.476959"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96">
+         startingLineNumber = "113"
+         endingLineNumber = "113">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -175,11 +119,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357422763.366312"
+         timestampString = "357472245.476959"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95">
+         startingLineNumber = "112"
+         endingLineNumber = "112">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -187,12 +131,54 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "BigFileLoading/BFFileLoader.m"
-         timestampString = "357418247.536236"
+         timestampString = "357472208.518592"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
+         startingLineNumber = "67"
+         endingLineNumber = "67"
          landmarkName = "-getFileSizeFor:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "BigFileLoading/BFFileLoader.m"
+         timestampString = "357472245.476959"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
+         landmarkName = "-runDelegate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "BigFileLoading/BFFileLoader.m"
+         timestampString = "357472208.518592"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "-run"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "BigFileLoading/BFViewController.m"
+         timestampString = "357472208.518592"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "30"
+         endingLineNumber = "30"
+         landmarkName = "-updateView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

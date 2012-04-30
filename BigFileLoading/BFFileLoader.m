@@ -9,6 +9,40 @@
 #import "BFFileLoader.h"
 #import "BFLoadingDelegate.h"
 
+@implementation BFOperation
+
+@synthesize fileSize = _fileSize;
+@synthesize filePosition = _filePosition;
+@synthesize filePath = _filePath;
+
+- (void)run
+{
+    fileHandle = [NSFileHandle fileHandleForReadingAtPath:_filePath];
+    while (true) {
+        @autoreleasepool {
+            NSData* dataRead = [fileHandle readDataOfLength:1024];
+            if ([dataRead length] == 0 || !dataRead) {
+                break;
+            }
+            _filePosition = [fileHandle offsetInFile];
+            NSLog(@"Bytes read %d", [dataRead length]);    
+            [delegate dataFetched:dataRead inOperation:self];
+        }
+    }
+}
+
+- (id)initWithFilePath:(NSString*)path size:(NSUInteger)size andDelegate:(id <BFLoadingDelegate>) aDelegate
+{
+    self = [super init];
+    _filePath = [[NSString alloc]initWithString:path];
+    _fileSize = size;
+    delegate = aDelegate;
+    return self;
+}
+@end
+
+
+
 @implementation BFFileLoader 
 
 @synthesize delegate;
@@ -39,56 +73,39 @@
     }
 }
 
-- (void)openFileWith:(NSString*)filepath
+- (void)openFile:(NSString*)filepath
 {
+    _filepath = [[NSString alloc] initWithString:filepath];
     _fileSize = [self getFileSizeFor:filepath];
     
-    fileHandle = [NSFileHandle fileHandleForReadingAtPath:filepath];
-    if (!_fileSize) {
+    if (_fileSize == 0) {
         [NSException raise:@"Unable to open file" format:@"File %s is unaccessible", filepath];
     }
 }
-- (BOOL)readChunk
-{
-    @autoreleasepool {
-        NSData* dataRead = [fileHandle readDataOfLength:_chunkSize];
-        if ([dataRead length] == 0 || !dataRead) {
-            return FALSE;
-        }
-        _filePosition = [fileHandle offsetInFile];
-        NSLog(@"Bytes read %d", [dataRead length]);    
-        [delegate dataFetched:dataRead byLoader:self];
-    }
-    return TRUE;
-}
 
-- (void)readFile
+- (void)readFile:(BOOL)inAsyncMode
 {
-    if (!fileHandle) {
-        [NSException raise:@"File must be opened." format:@""];
-    }
-    
     if (!delegate) {
         [NSException raise:@"Delegate must be set!" format:@""];
     }
     
-    while ([self readChunk]) {
+    BFOperation* operation = [[BFOperation alloc]initWithFilePath:_filepath size:_fileSize andDelegate:delegate];
+    if (inAsyncMode == YES) {
+        [self performSelectorInBackground:@selector(runDelegate:) withObject:operation];        
+    } else {
+        [operation run];        
     }
-    
-    NSLog(@"File successfully read");
+}
+     
+- (void)runDelegate:(BFOperation*)operation
+{
+    [operation run];
 }
 
+//todo: implement this!
 - (void)close
 {
-    [fileHandle closeFile];
 }
-
-- (id)init
-{
-    self = [super init];
-    return self;
-}
-
 
 @end
 
