@@ -41,11 +41,13 @@
     id <BFLoadingDelegate> delegate;
     NSUInteger _fileSize;
     NSUInteger _filePosition;
+    NSUInteger _chunkSize;
     NSString* _filePath;
 }
 
 @property(nonatomic,assign,readonly)NSUInteger filePosition;
 @property(nonatomic,assign,readonly)NSUInteger fileSize;
+@property(nonatomic,assign,readwrite)NSUInteger chunkSize;
 @property(nonatomic,retain,readonly)NSString* filePath;
 
 - (void)run;

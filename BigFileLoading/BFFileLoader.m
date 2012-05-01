@@ -14,13 +14,14 @@
 @synthesize fileSize = _fileSize;
 @synthesize filePosition = _filePosition;
 @synthesize filePath = _filePath;
+@synthesize chunkSize = _chunkSize;
 
 - (void)run
 {
     fileHandle = [NSFileHandle fileHandleForReadingAtPath:_filePath];
     while (true) {
         @autoreleasepool {
-            NSData* dataRead = [fileHandle readDataOfLength:1024];
+            NSData* dataRead = [fileHandle readDataOfLength:_chunkSize];
             if ([dataRead length] == 0 || !dataRead) {
                 break;
             }
@@ -31,11 +32,12 @@
     }
 }
 
-- (id)initWithFilePath:(NSString*)path size:(NSUInteger)size andDelegate:(id <BFLoadingDelegate>) aDelegate
+- (id)initWithFilePath:(NSString*)path size:(NSUInteger)size delegate:(id <BFLoadingDelegate>) aDelegate andChunkSize:(NSUInteger)chunkSize
 {
     self = [super init];
     _filePath = [[NSString alloc]initWithString:path];
     _fileSize = size;
+    _chunkSize = chunkSize;
     delegate = aDelegate;
     return self;
 }
@@ -89,7 +91,8 @@
         [NSException raise:@"Delegate must be set!" format:@""];
     }
     
-    BFOperation* operation = [[BFOperation alloc]initWithFilePath:_filepath size:_fileSize andDelegate:delegate];
+    BFOperation* operation = [[BFOperation alloc]initWithFilePath:_filepath size:_fileSize delegate:delegate andChunkSize:_chunkSize];
+
     if (inAsyncMode == YES) {
         [self performSelectorInBackground:@selector(runDelegate:) withObject:operation];        
     } else {

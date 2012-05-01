@@ -21,6 +21,7 @@
 		801675A3154C727B00427291 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 801675A1154C727B00427291 /* InfoPlist.strings */; };
 		801675A6154C727B00427291 /* BigFileLoadingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 801675A5154C727B00427291 /* BigFileLoadingTests.m */; };
 		801675B1154C72CC00427291 /* BFFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 801675B0154C72CC00427291 /* BFFileLoader.m */; };
+		8022F030155026F000E57CAA /* bigfile.dat in Resources */ = {isa = PBXBuildFile; fileRef = 8022F02F155026F000E57CAA /* bigfile.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		801675AF154C72CC00427291 /* BFFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFFileLoader.h; sourceTree = "<group>"; };
 		801675B0154C72CC00427291 /* BFFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFileLoader.m; sourceTree = "<group>"; };
 		801675B2154D984F00427291 /* BFLoadingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFLoadingDelegate.h; sourceTree = "<group>"; };
+		8022F02F155026F000E57CAA /* bigfile.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigfile.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		80167580154C727B00427291 /* BigFileLoading */ = {
 			isa = PBXGroup;
 			children = (
+				8022F02F155026F000E57CAA /* bigfile.dat */,
 				80167589154C727B00427291 /* BFAppDelegate.h */,
 				8016758A154C727B00427291 /* BFAppDelegate.m */,
 				8016758C154C727B00427291 /* BFViewController.h */,
@@ -239,6 +242,7 @@
 			files = (
 				80167585154C727B00427291 /* InfoPlist.strings in Resources */,
 				80167591154C727B00427291 /* BFViewController.xib in Resources */,
+				8022F030155026F000E57CAA /* bigfile.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +336,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -347,6 +352,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

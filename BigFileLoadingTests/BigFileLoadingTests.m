@@ -30,13 +30,13 @@
 - (void)testInitialConditions
 {
     STAssertNotNil(fileLoader, @"BFFileLoader object must be not nil");
-    STAssertThrows([fileLoader openFileWith:NONEXISTING_FILEPATH], @"Open file must throw exception on non existing file");
-    STAssertNoThrow([fileLoader openFileWith:EXISTING_FILEPATH], @"Open file must not raise error");  
+    STAssertThrows([fileLoader openFile:NONEXISTING_FILEPATH], @"Open file must throw exception on non existing file");
+    STAssertNoThrow([fileLoader openFile:EXISTING_FILEPATH], @"Open file must not raise error");  
 }
 
 - (void)testDataNotNilOnRead
 {
-    [fileLoader openFileWith:EXISTING_FILEPATH];
+//    [fileLoader openFileWith:EXISTING_FILEPATH];
     
 //    STAssertNotNil(data, @"data must not be null if we read chunk from existing file");
     

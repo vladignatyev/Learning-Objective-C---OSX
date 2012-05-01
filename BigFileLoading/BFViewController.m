@@ -134,6 +134,9 @@
     [progressBar setProgress:0.0f];
 }
 
+#define KB 1024
+#define MB 1024*KB
+
 - (IBAction)testButtonTouch:(id)sender
 {
     [progressAndFileInfo setText:@"Файл еще не загружен"];        
@@ -141,10 +144,10 @@
     
     BFFileLoader* loader = [[BFFileLoader alloc] init];
     loader.delegate = [[FileLoadingDelegate alloc] initWithViewController:self];
-    loader.chunkSize = 1024*300;    //300kB chunks
-    [loader openFile:@"/Users/ignatev/Downloads/ideaIU-11.1.1.dmg"]; //any large file
+    loader.chunkSize = 10*MB;    //1 MB chunks
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"bigfile" ofType:@"dat"];
+    [loader openFile:path]; //any large file
     [loader readFile: YES];
-    [loader close];
 }
 
 @end
